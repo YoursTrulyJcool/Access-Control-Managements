@@ -1,0 +1,13 @@
+# Convert temperature from one unit to another
+if from_unit == to_unit:
+    return temp  # No conversion needed if units are the same
+if from_unit == "FAHRENHEIT":
+    # Convert from Fahrenheit to Celsius or Kelvin
+    return (temp - 32) * 5 / 9 if to_unit == "CELSIUS" else (temp + 459.67) * 5 / 9
+if from_unit == "CELSIUS":
+    # Convert from Celsius to Fahrenheit or Kelvin
+    return temp * 9 / 5 + 32 if to_unit == "FAHRENHEIT" else temp + 273.15
+if from_unit == "KELVIN":
+    # Convert from Kelvin to Fahrenheit or Celsius
+    return temp * 9 / 5 - 459.67 if to_unit == "FAHRENHEIT" else temp - 273.15
+raise ValueError("Invalid unit selected.")  # Handle invalid unit selection
